@@ -1,0 +1,29 @@
+﻿<div class="AdminView">
+
+    <section>
+        <header>
+            <h1>Welcome to Admin</h1>
+            <p>From here you can manage all aspects of Waxi life</p>
+        </header>
+        <nav>
+            <button class="btn btn-default" ng-click="AccountRequests()">Register Requests</button> 
+        </nav>
+        <main>
+            <table class="table RegisterRequests">
+                <thead>
+                    <tr>
+                        <th>Email</th>
+                        <th>Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="ar in accountRequests">
+                        <td>{{ar.EmailAddress}}</td>
+                        <td>{{ar.DateRequested}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </main>
+    </section>
+
+</div>

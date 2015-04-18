@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<!--[if lt IE 7]>      <html lang="en" ng-app="RxApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="en" ng-app="RxApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" ng-app="RxApp" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html lang="en" ng-app="waxi" class="no-js">
+<!--<![endif]-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Interact JavaScript Tutorials</title>
+
+    <link href="node_modules/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+    <link href="/css/main.css" rel="stylesheet" />
+    <link href="/css/Site.css" rel="stylesheet" />
+</head>
+<body>
+
+
+    <div class="container-fluid">
+        <div ng-view="">Loading...</div>
+    </div>
+
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+
+    <!-- Lets load Angular -->
+    <script src="node_modules/angular/angular.min.js"></script>
+    <script src="node_modules/angular-route/angular-route.min.js"></script>
+
+    <!-- Bootstrap -->
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!--<script src="Scripts/angular-ui/ui-bootstrap.min.js"></script>
+    <script src="Scripts/angular-ui/ui-bootstrap-tpls.min.js"></script>-->
+
+    <!-- Moment -->
+    <script src="node_modules/moment/moment.js"></script>
+
+    <!-- Lets fire up the app -->
+    <script src="app/app.js"></script>
+    <script src="app/cms/routes.js"></script>
+    <script src="app/cms/CmsCtrl.js"></script>
+    <script src="app/Services/account.js"></script>
+
+    <!-- Services -->
+    <script src="app/Services/podDataFactory.js"></script>
+</body>
+</html>

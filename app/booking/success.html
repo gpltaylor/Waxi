@@ -1,0 +1,19 @@
+﻿<div class="bookingview">
+
+    <section class="bookingsucces">
+        <header>
+            <h1>Success</h1>
+            <p>Your booking has been successful, we look forward to seeing you.</p>
+        </header>
+        <nav ng-controller="CmsCtrl">
+            <button class="btn btn-default" ng-click="navigateTo('home')">Home</button>
+        </nav>
+    </section>
+
+    <section class="subnavmenu">
+        <nav ng-show="showNext()" ng-click="gotoNext()">
+            <button class="btn btn-default col-xs-3 pull-right">Next</button>
+        </nav>
+    </section>
+
+</div>

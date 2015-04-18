@@ -1,0 +1,51 @@
+﻿<section class="registerView formblock" ng-show="activeModule == 'register'">
+    <header>
+        <h1>Register</h1>
+        We're not quite ready to go live yet but please register your interest and we will email you once we are clear sailing
+    </header>
+    <main>
+        <label>Email</label>
+        <input type="email" name="emailaddress" ng-model="Register.EmailAddress" autofocus />
+        <label>Password</label>
+        <input type="password" name="password" ng-model="password" />
+        <label>Forname</label>
+        <input type="text" name="firstname" ng-model="Register.FirstName" />
+        <label>Surname</label>
+        <input type="text" name="Surname" ng-model="Register.Surname" />
+        <label>Date of Birth</label>
+        <div class="datepicker">
+            <select ng-model="day" ng-options="day.name for day in DatePicker.days">
+                <option value="">Day</option>
+            </select>
+            <select ng-model="month" ng-options="month.name for month in DatePicker.months">
+                <option value="">Month</option>
+            </select>
+            <select ng-model="year" ng-options="year.name for year in DatePicker.years">
+                <option value="">Year</option>
+            </select>
+        </div>
+
+        <label>Sex</label>
+        <div class="sexpicker">
+            <input type="radio" value="F" id="sex_f" name="sex" ng-model="Register.Sex" />
+            <label for="sex_f">Female</label>
+
+            <input type="radio" value="M" id="sex_m" name="sex" ng-model="Register.Sex" />
+            <label for="sex_m">Male</label>
+        </div>
+    </main>
+    <nav>
+        <input type="button" class="btn btn-default" value="register" ng-click="registerRequest()" />
+    </nav>
+    <footer></footer>
+</section>
+
+<section class="registerView formblock" ng-show="activeModule == 'registersuccess'">
+    <header>
+        <h1>Register Success</h1>
+        You have successfully registered and we will be sending you a confirmation email shortly.
+    </header>
+    <nav ng-controller="CmsCtrl">
+        <button class="btn btn-default" ng-click="navigateTo('booking')">Book Seat</button>
+    </nav>
+</section>

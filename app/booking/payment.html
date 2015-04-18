@@ -1,0 +1,45 @@
+﻿<div class="bookingview">
+
+    <section class="bookingpayment">
+        <h1>Time to pay</h1>
+        <p>To complete your booking please enter your payment details</p>
+
+        <main>
+            <input type="text" placeholder="Card Number" />
+            <select>
+                <option>- Payment Card -</option>
+                <option>Visa</option>
+            </select>
+            <input type="text" placeholder="First Name" />
+            <input type="text" placeholder="Surname" />
+
+            <label>Expiry Date</label>
+            <div class="datepicker">
+                <select ng-model="day" ng-options="day.name for day in DatePicker.days">
+                    <option value="">Day</option>
+                </select>
+                <select ng-model="month" ng-options="month.name for month in DatePicker.months">
+                    <option value="">Month</option>
+                </select>
+                <select ng-model="year" ng-options="year.name for year in DatePicker.years">
+                    <option value="">Year</option>
+                </select>
+            </div>
+            <input type="text" placeholder="Security Code" />
+
+            <label>Billing Address</label>
+            <input type="text" placeholder="Address 1" />
+            <input type="text" placeholder="Address 2" />
+            <input type="text" placeholder="City" />
+            <input type="text" placeholder="Post Code" />
+
+        </main>
+    </section>
+
+    <section class="subnavmenu">
+        <nav ng-click="gotoConfirmation()">
+            <button class="btn btn-default col-xs-3 pull-right">Next</button>
+        </nav>
+    </section>
+
+</div>

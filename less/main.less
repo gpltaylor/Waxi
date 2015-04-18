@@ -1,0 +1,123 @@
+@import "settings";
+
+@font-face {
+    font-family: 'NeuzeitGro-Bol';
+    src: url('/fonts/2BF066_0_0.eot');
+    src: url('/fonts/2BF066_0_0.eot?#iefix') format('embedded-opentype'), url('/fonts/2BF066_0_0.woff') format('woff'), url('/fonts/2BF066_0_0.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'NeuzeitGro-Reg';
+    src: url('/fonts/2BF066_1_0.eot');
+    src: url('/fonts/2BF066_1_0.eot?#iefix') format('embedded-opentype'), url('/fonts/2BF066_1_0.woff') format('woff'), url('/fonts/2BF066_1_0.ttf') format('truetype');
+}
+
+* {
+    font-family: NeuzeitGro-Reg;
+    font-size: 18px;
+}
+
+body {
+    background-color: @yellow;
+
+    .logo {
+        background-image: url(/Content/mainlogo.png);
+        background-repeat: no-repeat;
+        width: 100px;
+        height: 50px;
+        display: inline-block;
+        overflow: hidden;
+        position: relative;
+        top: 5px;
+    }
+}
+
+.waxibutton {
+    line-height: 2em;
+    color: @yellow;
+    background-color: @blackbg;
+    border-radius: 0px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border: 1px solid @yellow;
+    
+    &:hover, &:active {
+        color: white;
+        background-color: @blackbg;
+    }
+}
+
+section.formblock {
+
+    main {
+
+        > label {
+            width: 120px;
+            clear: both;
+        }
+
+        > label, > input {
+            display: block;
+            float: left;
+        }
+
+        > input {
+            clear: right;
+            margin-bottom: 5px;
+            padding: 2px 10px 2px 10px;
+        }
+
+            > input[type='date'] {
+                line-height: 1.8em;
+            }
+
+        .datepicker {
+            float: left;
+            clear: right;
+        }
+
+        .sexpicker {
+            float: left;
+            clear: right;
+        }
+    }
+
+    nav {
+        float: left;
+        clear: both;
+    }
+}
+
+@import "directives";
+@import "bookingmodule";
+@import "cms";
+
+@media (max-width: 600px) {
+    section.formblock {
+
+        main {
+
+            > label {
+                width: 100%;
+                display: block;
+            }
+
+            > label, > input {
+                display: block;
+                width: 100%;
+            }
+
+            > input {
+                clear: both;
+                width: 100%;
+                margin-bottom: 5px;
+                padding: 2px 10px 2px 10px;
+            }
+
+                > input[type='date'] {
+                    width: 100%;
+                    line-height: 1.8em;
+                }
+        }
+    }
+}

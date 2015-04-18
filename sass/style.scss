@@ -1,0 +1,44 @@
+@import 'mixins';
+@import 'settings';
+
+body {
+  font-family: $mainFont;
+}
+
+#editorwrapper {
+  position: relative;
+  height: 300px;
+}
+
+#editor {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.reactmenu {
+  h1 {
+    margin: 0px;
+  }
+  
+  .pod {
+    min-height: 80px;
+    padding-top: 5px;
+    @include border-radius(5px);
+    cursor: pointer;
+
+    h2 {
+      margin: 0px;
+    }
+
+    h3 {
+      margin: 0px;
+    }
+
+    &.selected {
+      border: solid 1px $gray;
+    }
+  }
+}

@@ -1,0 +1,62 @@
+/**
+Style for Directives
+*/
+.waxi-button {
+    padding: 0px;
+    border: 1px solid transparent;
+    
+    input[type="checkbox"] {
+        display: none;  
+    }
+
+    label {
+        line-height: 2em;
+        color: @yellow;
+        background-color: @blackbg;
+        border-radius: 0px;
+        padding: 20px;
+        display: inline-block;
+        text-align: center;
+        width: 100%;
+        margin: 0px;
+        
+        span {
+            /** TODO: Move to less function **/
+            pointer-events: none;
+            -webkit-user-select: none;  
+            -moz-user-select: none;    
+            -ms-user-select: none;      
+            user-select: none;
+            font-size: 14px;
+            font-weight: normal;
+        }
+    }
+
+
+    input[type="checkbox"]:checked + label {
+        background-color: Green;
+        color: white;
+    }
+
+    input[type="checkbox"]:checked + label:after {
+        content: " \2713"
+    }
+}
+
+.waxihourpicker {
+    button {
+        .waxibutton();
+        display: block;
+        width: 100%;
+    }
+    
+    select {
+        border: 0px;
+        height: 2em;
+        font-size: 2em;
+        display: block;
+        width: 100%;
+        text-align: center;
+        padding-left: 36%;
+    }
+}

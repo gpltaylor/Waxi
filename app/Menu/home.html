@@ -1,0 +1,25 @@
+﻿<div class="reactmenu">
+    <div>
+        <h1>{{selected.name}}</h1>
+
+        <div>{{selected.description}}</div>
+        <div>
+            <button ng-click="navTo(selected.location)" class="btn btn-default">Begin</button>
+        </div>
+    </div>
+
+    <div ng-repeat="cat in cats" class="row">
+        <div class="col-sm-12 cat">
+            <h2>{{cat.name}}</h2>
+
+            <p>{{cat.description}}</p>
+
+            <div class="podslick">
+                <div ng-repeat="pod in cat.pods" ng-click="select(pod)" ng-class="{selected: pod.selected}" class="pod">
+                    <h3>{{pod.name}}</h3>
+                    {{pod.description | limitTo : 50}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

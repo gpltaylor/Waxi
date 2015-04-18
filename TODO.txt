@@ -1,0 +1,7 @@
+TODO
+
+Use require to load the libs only if they user navigates to a given module.
+For example
+When a user navigates to the RxJS Modules page require should then load the .js files requires to allow this to run.
+
+At the moment there are only a few libs however this can take some time to load. There is no point in pre-loading all the scripts.

@@ -1,0 +1,32 @@
+body {
+  font-family: Helvetica, sans-serif; }
+
+#editorwrapper {
+  position: relative;
+  height: 300px; }
+
+#editor {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0; }
+
+.reactmenu h1 {
+  margin: 0px; }
+.reactmenu .pod {
+  min-height: 80px;
+  padding-top: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  border-radius: 5px;
+  cursor: pointer; }
+  .reactmenu .pod h2 {
+    margin: 0px; }
+  .reactmenu .pod h3 {
+    margin: 0px; }
+  .reactmenu .pod.selected {
+    border: solid 1px #cccccc; }
+
+/*# sourceMappingURL=style.css.map */

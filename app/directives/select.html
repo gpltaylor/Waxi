@@ -1,0 +1,11 @@
+﻿<div class="waxihourpicker">
+    <button type="button" class="btn" aria-label="Left Align" ng-click="inc()">
+        <span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span>
+    </button>
+
+    <select ng-model="data.selectedItem" ng-options="item.display for item in data.items" name="{{data.selectName}}" />
+
+    <button type="button" class="btn" aria-label="Left Align" ng-click="dec()">
+        <span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>
+    </button>
+</div>

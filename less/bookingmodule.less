@@ -1,0 +1,103 @@
+@import "settings";
+
+.bookingview {
+
+    label {
+        padding-top: 0px;
+    }
+    
+    .subnavmenu {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        display: inline-block;
+        width: 100%;
+        
+            button {
+                line-height: 2em;
+                /*width: 40px;*/
+                color: @yellow;
+                background-color: @blackbg;
+                border-radius: 0px;
+                padding-top: 10px;
+                padding-bottom: 10px;
+            }        
+    }
+
+    section.bookingseats {
+        padding-bottom: 15px;
+
+        nav {
+
+            div {
+                margin-top: 5px;
+            }
+
+            button {
+                line-height: 2em;
+                /*width: 40px;*/
+                color: @yellow;
+                background-color: @blackbg;
+                border-radius: 0px;
+                padding: 20px;
+            }
+        }
+    }
+
+    section.bookingdate {
+        padding-bottom: 15px;
+
+        nav {
+            button {
+                color: @yellow;
+                background-color: @blackbg;
+                border-radius: 0px;
+                padding: 20px;
+            }
+        }
+    }
+
+    section.bookingpayment {
+        padding-bottom: 15px;
+
+        main {
+            label {
+                float: left;
+                clear: both;
+            }
+
+            input, > select {
+                float: left;
+                clear: both;
+                margin-top: 5px;
+                padding: 2px 10px 2px 10px;
+            }
+
+            .datepicker {
+                clear: both;
+
+                > select {
+                    margin-top: 5px;
+                }
+            }
+        }
+
+        nav {
+            clear: both;
+
+            button {
+                margin-top: 10px;
+                color: @yellow;
+                background-color: @blackbg;
+                border-radius: 0px;
+            }
+        }
+    }
+
+    section.bookingtime {
+        padding-bottom: 15px;
+    }
+
+    section.bookingsucces {
+        padding-bottom: 15px;
+    }
+}

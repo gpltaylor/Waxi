@@ -1,0 +1,66 @@
+﻿<div class="bookingview">
+    <section class="bookingTickets">
+        <form ng-submit="selectTicket($event)" class="form row">
+            <div class="form-group">
+                <label>Travel Type</label>
+                <select name="TicketType" ng-model="bookingDetails.ticketType" class="form-control">
+                    <option>Single</option>
+                    <option>Return</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-xs-6">
+                        <label>Adult</label>
+                        <input type="text" name="NumAdults" ng-model="bookingDetails.numAdults" class="form-control" />
+                    </div>
+                    <div class="col-xs-6">
+                        <label>Child</label>
+                        <input type="text" name="NumChildren" ng-model="bookingDetails.numChildren" class="form-control" />
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Leaving from</label>
+                <select class="form-control" ng-options="departure.name for departure in departures" ng-model="bookingDetails.departure" />
+            </div>
+            <div class="form-group">
+                <label>Going to</label>
+                <select class="form-control" ng-options="arrival.name for arrival in arrivals" ng-model="bookingDetails.arrival" />
+            </div>
+
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-xs-6">
+                        <label>Depature Date</label>
+                        <input type="date" name="DepatureDate" ng-model="bookingDetails.depatureDate" class="form-control" />
+                    </div>
+                    <div class="col-xs-6">
+                        <label>Departure Time</label>
+                        <input type="time" name="DepatureTime" ng-model="bookingDetails.depatureDate" class="form-control" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-xs-6">
+                        <label>Return Date</label>
+                        <input type="date" name="ReturnDate" ng-model="bookingDetails.returnDate" class="form-control" />
+                    </div>
+                    <div class="col-xs-6">
+                        <label>Return Time</label>
+                        <input type="time" name="ReturnTime" ng-model="bookingDetails.returnDate" class="form-control" />
+                    </div>
+                </div>
+            </div>
+        </form>
+
+    </section>
+
+    <section class="subnavmenu">
+        <nav ng-click="gotoPayment()">
+            <button class="btn btn-default col-xs-3 pull-right">Next</button>
+        </nav>
+    </section>
+</div>

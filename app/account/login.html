@@ -1,0 +1,26 @@
+﻿<section class="formblock">
+    <header>
+        <h1>Waxi Login</h1>
+        <p>Login to manage your booking in a click</p>
+    </header>
+
+    <form name="frmLogin" method="post" ng-submit="loginEmailPassword()" novalidate>
+        <main>
+            <label>Email Address</label><input type="email" ng-focus="isFocused" autofocus name="emailaddress" ng-model="username" required/>
+            <label>Password</label><input type="password" name="password" ng-model="password" required />
+        </main>
+
+        <nav>
+            <input type="submit" class="btn btn-primary" value="login" ng-disabled="frmLogin.$valid == false" />
+            or login with -
+            <a ng-click="loginThirdParty('facebook')">Facebook</a> -
+            <a ng-click="loginThirdParty('google')">Google</a>
+            <div ng-class="error">{{loginStatus}}</div>
+            <div ng-show="CurrentUser">Login succeeded</div>
+            <div ng-show="UserLogin">Login succeeded using email/password. - Your details below</div>
+            <div>
+                <a href="/#/account/register">Register</a>
+            </div>
+        </nav>
+    </form>
+</section>
