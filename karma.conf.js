@@ -7,7 +7,7 @@ module.exports = function(config){
         'node_modules/angular/angular.min.js',
         'node_modules/angular-route/angular-route.min.js',
         'node_modules/angular-mocks/angular-mocks.js',
-        'node_modules/firebase/lib/firebase-web.js',
+        'bower_components/firebase/firebase.js',
         'app/app.js',
         'app/**/*.js',
         'app/**/**/*_test.js'

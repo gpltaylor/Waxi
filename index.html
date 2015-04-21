@@ -16,8 +16,33 @@
 </head>
 <body>
 
+<header class="navbar navbar-inverse navbar-top">
+    <div class="container">
+        <nav class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
 
-    <div class="container-fluid">
+            <a class="logo" href="/#/">&nbsp;</a>
+        </nav>
+        <nav class="navbar-collapse collapse">
+            <ul class="nav navbar-nav" ng-controller="LoginCtrl" ng-show="CurrentUser == null">
+                <li><a href="/#/account/login">Login</a></li>
+                <li><a href="/#/booking">Booking</a></li>
+                <li><a href="/#/account/register">Register</a></li>
+            </ul>
+            <ul class="nav navbar-nav" ng-controller="LoginCtrl" ng-show="CurrentUser != null">
+                <li><a href="/#/cms/home">Welcome {{CurrentUser}}</a></li>
+                <li><a href="/#/booking">Booking</a></li>
+                <li><a href="/#/" ng-click="logout()">Logout</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+    <div class="container">
         <div ng-view="">Loading...</div>
     </div>
 
@@ -35,6 +60,7 @@
 
     <!-- Load Firebase -->
     <script src="bower_components/firebase/firebase.js"></script>
+    <script src="node_modules/angularfire/dist/angularfire.min.js"></script>
 
     <!-- Moment -->
     <script src="node_modules/moment/moment.js"></script>
@@ -47,10 +73,20 @@
     <script src="app/booking/routes.js"></script>
     <script src="app/booking/bookingCtrl.js"></script>
 
-    <script src="app/Services/account.js"></script>
+    <script src="app/account/routes.js"></script>
+    <script src="app/account/LoginCtrl.js"></script>
+    <script src="app/account/RegisterCtrl.js"></script>
+
+<!-- Admin Module -->
+    <script src="app/admin/routes.js"></script>
+    <script src="app/admin/AdminCtrl.js"></script>
 
     <!-- Services -->
+    <script src="app/Services/account.js"></script>
     <script src="app/Services/typeservice.js"></script>
     <script src="app/Services/bookingservice.js"></script>
+    <script src="app/Services/dataservice.js"></script>
+    <script src="app/Services/registerservice.js"></script>
+
 </body>
 </html>

@@ -3,16 +3,11 @@
 describe('CMS', function () {
 
     beforeEach(module('waxi.controllers'));
-    beforeEach(function () {
-        module('firebase');
-    });
 
     describe('CmsCtrl', function () {
 
         var ctrl, scope, location;
-        beforeEach(inject(function (_$httpBackend_, $rootScope, $controller) {
-            console.log("Scope", scope);
-
+        beforeEach(inject(function (_$httpBackend_, $rootScope, $controller, $location) {
             scope = $rootScope.$new();
             location = $location;
             ctrl = $controller('CmsCtrl', {$scope: scope, $location: location});
@@ -20,6 +15,7 @@ describe('CMS', function () {
 
         it('should produce controller', function () {
             expect(ctrl).toBeDefined();
+            expect(typeof scope.navigateTo).toBe("function");
         });
 
     });

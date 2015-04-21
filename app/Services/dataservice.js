@@ -2,10 +2,11 @@
     'use strict';
     var myModule = angular.module('waxi.services');
 
-    myModule.factory('DataService', function ($http, $q, $firebase) {
+    myModule.factory('DataService', function ($http, $q, $firebaseObject) {
 
         var name = "Data Service";
         var serviceuri = "";
+        var userdata;
 
         var accountRequests = function (cb) {
 
@@ -29,8 +30,8 @@
         var populateUserData = function (email) {
             if (email === undefined) { return; }
             var dataref = new Firebase('https://waxiuat.firebaseio.com/RegisterAccounts/' + email.replace('.', '%'));
-            var userdataSync = $firebase(dataref);
-            var userdataobject = userdataSync.$asObject();
+            userdata = $firebaseObject(dataref);
+            //var userdataobject = userdataSync.$asObject();
             //userdataobject.$bindTo($scope, 'userdata');
         };
 

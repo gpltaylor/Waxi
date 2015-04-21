@@ -1,7 +1,7 @@
 ﻿(function () {
     'use strict';
 
-    var myModule = angular.module('waxi.services', []);
+    var myModule = angular.module('waxi.services');
 
     myModule.factory('AccountService', function ($http) {
 
