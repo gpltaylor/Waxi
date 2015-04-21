@@ -2,7 +2,9 @@
 
 describe('CMS', function () {
 
-    beforeEach(module('waxi.controllers'));
+    beforeEach(function() {
+        module('waxi.controllers');
+    });
 
     describe('CmsCtrl', function () {
 
