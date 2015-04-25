@@ -1,4 +1,4 @@
-﻿@font-face {
+@font-face {
   font-family: 'NeuzeitGro-Bol';
   src: url('/fonts/2BF066_0_0.eot');
   src: url('/fonts/2BF066_0_0.eot?#iefix') format('embedded-opentype'), url('/fonts/2BF066_0_0.woff') format('woff'), url('/fonts/2BF066_0_0.ttf') format('truetype');
@@ -10,13 +10,13 @@
 }
 * {
   font-family: NeuzeitGro-Reg;
-  font-size: 18px;
+  font-size: 16px;
 }
 body {
   background-color: #f5ba24;
 }
 body .logo {
-  background-image: url(/Content/mainlogo.png);
+  background-image: url('/img/mainlogo.png');
   background-repeat: no-repeat;
   width: 100px;
   height: 50px;
@@ -246,4 +246,4 @@ section.cms nav div {
     line-height: 1.8em;
   }
 }
-/*# sourceMappingURL=main.css.map */
+/*# sourceMappingURL=/css/main.css.map */

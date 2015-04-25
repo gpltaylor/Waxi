@@ -12,10 +12,16 @@ module.exports = function(grunt) {
 				port: 4444
 			}
 		},		
-        sass: {
-            dist: {
+        less: {
+            dev: {
+                options: {
+                    sourceMap: true,
+                    sourceMapFilename: '/css/main.css.map',
+                    sourceMapBasepath: '/xxx/',
+                    sourceMapRootpath: '/'
+                },
                 files: {
-                    'app/css/style.css' : 'sass/style.scss'
+                    'css/main.css': 'less/main.less'
                 }
             }
         },
@@ -66,6 +72,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-http-server');
     grunt.loadNpmTasks('grunt-karma');
 	grunt.loadNpmTasks('grunt-phantom');
+    grunt.loadNpmTasks('grunt-contrib-less');
 
     grunt.registerTask('default',['karma']);
     grunt.registerTask('serve',['http-server:dev','sass','watch']);
