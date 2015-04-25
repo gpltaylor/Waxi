@@ -29,7 +29,7 @@ app.controller('BookingCtrl', ['$scope', '$location', '$filter', 'TypesService',
 
         $scope.gotoPayment = function (bookingDetails) {
             BookingService.bookingDetails = bookingDetails;
-            //$location.url("/booking/payment");
+            $location.url("/booking/payment");
         };
 
         $scope.gotoConfirmation = function (bookingDetails) {

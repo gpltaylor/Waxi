@@ -40,6 +40,9 @@ body .logo {
   color: white;
   background-color: #333132;
 }
+.waxibutton:disabled {
+  background-color: #bdbdbd;
+}
 section.formblock main > label {
   width: 120px;
   clear: both;
@@ -123,6 +126,9 @@ Style for Directives
 .waxihourpicker button:active {
   color: white;
   background-color: #333132;
+}
+.waxihourpicker button:disabled {
+  background-color: #bdbdbd;
 }
 .waxihourpicker select {
   border: 0px;

@@ -43,7 +43,7 @@ module.exports = function(grunt) {
                 cache: 0,
                 root: './',
                 port: 8000,
-                host: 'localhost',
+                host: '192.168.1.76',
                 showDir: true,
                 runInBackground: true
             },
@@ -75,5 +75,5 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-less');
 
     grunt.registerTask('default',['karma']);
-    grunt.registerTask('serve',['http-server:dev','sass','watch']);
+    grunt.registerTask('serve',['http-server:dev','less:dev','watch']);
 }
