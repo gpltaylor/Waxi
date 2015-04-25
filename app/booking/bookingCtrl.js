@@ -23,7 +23,7 @@ app.controller('BookingCtrl', ['$scope', '$location', '$filter', 'TypesService',
                 departure: '',
                 arrival: '',
                 depatureDate: new Date(),
-                returnDate: new Date(),
+                returnDate: new Date()
             };
         }
 

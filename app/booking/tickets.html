@@ -1,9 +1,10 @@
 ﻿<div class="bookingview">
+    <form name="FrmBookingView" class="form row" ng-submit="gotoPayment()" novalidate>
+
     <section class="bookingTickets">
-        <form ng-submit="selectTicket($event)" class="form row">
             <div class="form-group">
                 <label>Travel Type</label>
-                <select name="TicketType" ng-model="bookingDetails.ticketType" class="form-control">
+                <select name="TicketType" ng-model="bookingDetails.ticketType" class="form-control" required>
                     <option>Single</option>
                     <option>Return</option>
                 </select>
@@ -12,7 +13,7 @@
                 <div class="row">
                     <div class="col-xs-6">
                         <label>Adult</label>
-                        <input type="text" name="NumAdults" ng-model="bookingDetails.numAdults" class="form-control" />
+                        <input type="text" name="NumAdults" ng-model="bookingDetails.numAdults" class="form-control" pattern="^[1-9][0-9]*$" />
                     </div>
                     <div class="col-xs-6">
                         <label>Child</label>
@@ -54,13 +55,13 @@
                     </div>
                 </div>
             </div>
-        </form>
 
     </section>
 
     <section class="subnavmenu">
-        <nav ng-click="gotoPayment()">
-            <button class="btn btn-default col-xs-3 pull-right">Next</button>
+        <nav>
+            <input type="submit" value="Next" class="btn btn-default col-xs-3 pull-right" />
         </nav>
     </section>
+    </form>
 </div>
