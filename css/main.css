@@ -26,6 +26,7 @@ body .logo {
   top: 5px;
 }
 .waxibutton {
+  min-width: 100px;
   line-height: 2em;
   color: #f5ba24;
   background-color: #333132;
@@ -107,6 +108,7 @@ Style for Directives
   content: " \2713";
 }
 .waxihourpicker button {
+  min-width: 100px;
   line-height: 2em;
   color: #f5ba24;
   background-color: #333132;
@@ -224,6 +226,13 @@ section.cms nav p {
 }
 section.cms nav div {
   cursor: pointer;
+}
+.css-form input.ng-invalid.ng-touched {
+  background-color: #FA787E;
+  border: solid 2px red;
+}
+.css-form input.ng-valid.ng-touched {
+  background-color: #78FA89;
 }
 @media (max-width: 600px) {
   section.formblock main > label {

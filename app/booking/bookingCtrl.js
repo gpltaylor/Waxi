@@ -17,8 +17,8 @@ app.controller('BookingCtrl', ['$scope', '$location', '$filter', 'TypesService',
             $scope.bookingDetails = BookingService.bookingDetails;
         } else {
             $scope.bookingDetails = {
-                ticketType: '',
-                numAdults: 0,
+                ticketType: 'Single',
+                numAdults: 1,
                 numChildren: 0,
                 departure: '',
                 arrival: '',
@@ -27,13 +27,13 @@ app.controller('BookingCtrl', ['$scope', '$location', '$filter', 'TypesService',
             };
         }
 
-        $scope.gotoPayment = function () {
-            BookingService.bookingDetails = $scope.bookingDetails;
-            $location.url("/booking/payment");
+        $scope.gotoPayment = function (bookingDetails) {
+            BookingService.bookingDetails = bookingDetails;
+            //$location.url("/booking/payment");
         };
 
-        $scope.gotoConfirmation = function () {
-            BookingService.bookingDetails = $scope.bookingDetails;
+        $scope.gotoConfirmation = function (bookingDetails) {
+            BookingService.bookingDetails = bookingDetails;
             $location.url("/booking/success");
         };
 

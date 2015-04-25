@@ -1,7 +1,7 @@
 ﻿<div class="bookingview">
-    <form name="FrmBookingView" class="form row" ng-submit="gotoPayment()" novalidate>
+    <form novalidate name="FrmBookingView" class="css-form">
 
-    <section class="bookingTickets">
+        <div class="bookingTickets">
             <div class="form-group">
                 <label>Travel Type</label>
                 <select name="TicketType" ng-model="bookingDetails.ticketType" class="form-control" required>
@@ -13,32 +13,53 @@
                 <div class="row">
                     <div class="col-xs-6">
                         <label>Adult</label>
-                        <input type="text" name="NumAdults" ng-model="bookingDetails.numAdults" class="form-control" pattern="^[1-9][0-9]*$" />
+                        <input type="text" name="NumAdults" ng-model="bookingDetails.numAdults" class="form-control"
+                               pattern="^[1-9][0-9]*$" required=""/>
+
+                        <div ng-show="FrmBookingView.NumAdults.$touched">
+                            <span ng-show="FrmBookingView.NumAdults.$error.required">1 adult ticket minimum</span>
+                            <span ng-show="FrmBookingView.NumAdults.$error.pattern">invalid number of tickets</span>
+                        </div>
                     </div>
                     <div class="col-xs-6">
                         <label>Child</label>
-                        <input type="text" name="NumChildren" ng-model="bookingDetails.numChildren" class="form-control" />
+                        <input type="text" name="NumChildren" ng-model="bookingDetails.numChildren"
+                               class="form-control"/>
                     </div>
                 </div>
-            </div>
-            <div class="form-group">
-                <label>Leaving from</label>
-                <select class="form-control" ng-options="departure.name for departure in departures" ng-model="bookingDetails.departure" />
-            </div>
-            <div class="form-group">
-                <label>Going to</label>
-                <select class="form-control" ng-options="arrival.name for arrival in arrivals" ng-model="bookingDetails.arrival" />
             </div>
 
             <div class="form-group">
                 <div class="row">
                     <div class="col-xs-6">
+                        <div class="form-group">
+                            <label>Leaving from</label>
+                            <select class="form-control" ng-options="departure.name for departure in departures"
+                                    ng-model="bookingDetails.departure" required=""/>
+                        </div>
+                    </div>
+                    <div class="col-xs-6">
+                        <div class="form-group">
+                            <label>Going to</label>
+                            <select class="form-control" ng-options="arrival.name for arrival in arrivals"
+                                    ng-model="bookingDetails.arrival"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-xs-6">
                         <label>Depature Date</label>
-                        <input type="date" name="DepatureDate" ng-model="bookingDetails.depatureDate" class="form-control" />
+                        <input type="date" name="DepatureDate" ng-model="bookingDetails.depatureDate"
+                               class="form-control"/>
                     </div>
                     <div class="col-xs-6">
                         <label>Departure Time</label>
-                        <input type="time" name="DepatureTime" ng-model="bookingDetails.depatureDate" class="form-control" />
+                        <input type="time" name="DepatureTime" ng-model="bookingDetails.depatureDate"
+                               class="form-control"/>
                     </div>
                 </div>
             </div>
@@ -47,21 +68,26 @@
                 <div class="row">
                     <div class="col-xs-6">
                         <label>Return Date</label>
-                        <input type="date" name="ReturnDate" ng-model="bookingDetails.returnDate" class="form-control" />
+                        <input type="date" name="ReturnDate" ng-model="bookingDetails.returnDate" class="form-control"/>
                     </div>
                     <div class="col-xs-6">
                         <label>Return Time</label>
-                        <input type="time" name="ReturnTime" ng-model="bookingDetails.returnDate" class="form-control" />
+                        <input type="time" name="ReturnTime" ng-model="bookingDetails.returnDate" class="form-control"/>
                     </div>
                 </div>
             </div>
 
-    </section>
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-xs-6">
+                    </div>
+                    <div class="col-xs-6">
+                        <input type="submit" value="Next" class="waxibutton pull-right"
+                               ng-disabled="FrmBookingView.$valid == false" ng-click="gotoPayment(bookingDetails)"/>
+                    </div>
+                </div>
+            </div>
 
-    <section class="subnavmenu">
-        <nav>
-            <input type="submit" value="Next" class="btn btn-default col-xs-3 pull-right" />
-        </nav>
-    </section>
+        </div>
     </form>
 </div>

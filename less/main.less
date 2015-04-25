@@ -33,6 +33,7 @@ body {
 }
 
 .waxibutton {
+  min-width: 100px;
     line-height: 2em;
     color: @yellow;
     background-color: @blackbg;
@@ -45,6 +46,10 @@ body {
         color: white;
         background-color: @blackbg;
     }
+
+  &:disabled {
+    background-color: #bdbdbd;
+  }
 }
 
 section.formblock {
@@ -91,6 +96,7 @@ section.formblock {
 @import "directives";
 @import "bookingmodule";
 @import "cms";
+@import "formvalidation";
 
 @media (max-width: 600px) {
     section.formblock {
