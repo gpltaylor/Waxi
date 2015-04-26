@@ -106,13 +106,13 @@ IF EXIST "%DEPLOYMENT_TARGET%\package.json" (
 )
 
 :: 4. Install bower packages
-IF EXIST "$DEPLOYMENT_TARGET\bower.json" {
+IF EXIST "$DEPLOYMENT_TARGET\bower.json" (
   ::cd "$DEPLOYMENT_TARGET"
   call :ExecuteCmd !NPM_CMD! install bower
   call :ExecuteCmd ./node_modules/.bin/bower install
 
   IF !ERRORLEVEL! NEQ 0 goto error
-}
+)
 
 :: 4. Build SASS and Minify
 :: pushd %DEPLOYMENT_TARGET%
