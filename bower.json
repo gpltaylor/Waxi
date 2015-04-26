@@ -1,0 +1,27 @@
+{
+  "name": "Waxi",
+  "version": "0.0.1",
+  "homepage": "https://github.com/gpltaylor/Waxi",
+  "authors": [
+    "Garry Taylor <giz@gbdesign.net>"
+  ],
+  "description": "Waxi booking system",
+  "main": "server.js",
+  "moduleType": [
+    "node"
+  ],
+  "keywords": [
+    "Waxi"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "firebase": "~2.2.4"
+  }
+}
