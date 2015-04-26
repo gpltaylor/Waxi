@@ -1,2 +1,2 @@
-# Interact
-An interactive JavaScript tutorial website aimed to teach common libraries and help the community make better...
+# Waxi Taxi
+This application allows visitors of Waxi Taxi's in Manchester to book online using their mobile phone.

@@ -32,7 +32,7 @@
 
             DatePicker.months = [];
             DatePicker.months.push({ name: 'January', value: 1 });
-            DatePicker.months.push({ name: 'Febuary', value: 2 });
+            DatePicker.months.push({ name: 'february', value: 2 });
             DatePicker.months.push({ name: 'March', value: 3 });
             DatePicker.months.push({ name: 'April', value: 4 });
             DatePicker.months.push({ name: 'May', value: 5 });
