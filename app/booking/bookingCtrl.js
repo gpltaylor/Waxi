@@ -12,6 +12,7 @@ app.controller('BookingCtrl', ['$scope', '$location', '$filter', 'TypesService',
         $scope.name = "Booking Controller";
         $scope.departures = BookingService.departures;
         $scope.arrivals = BookingService.arrivals;
+        $scope.DatePicker = TypesService.getDatePickerOptions();
 
         if (BookingService.bookingDetails != undefined) {
             $scope.bookingDetails = BookingService.bookingDetails;

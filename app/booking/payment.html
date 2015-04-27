@@ -1,45 +1,92 @@
 ﻿<div class="bookingview">
 
-    <section class="bookingpayment">
-        <h1>Time to pay</h1>
-        <p>To complete your booking please enter your payment details</p>
+    <h1>Time to pay</h1>
 
-        <main>
-            <input type="text" placeholder="Card Number" />
-            <select>
-                <option>- Payment Card -</option>
-                <option>Visa</option>
-            </select>
-            <input type="text" placeholder="First Name" />
-            <input type="text" placeholder="Surname" />
+    <p>To complete your booking please enter your payment details</p>
 
-            <label>Expiry Date</label>
-            <div class="datepicker">
-                <select ng-model="day" ng-options="day.name for day in DatePicker.days">
-                    <option value="">Day</option>
-                </select>
-                <select ng-model="month" ng-options="month.name for month in DatePicker.months">
-                    <option value="">Month</option>
-                </select>
-                <select ng-model="year" ng-options="year.name for year in DatePicker.years">
-                    <option value="">Year</option>
-                </select>
+    <form novalidate name="FrmPayment" class="css-form" ng-submit="gotoConfirmation()">
+
+        <div class="form-group">
+            <div class="row">
+                <div class="col-xs-6">
+                    <label>First Name</label>
+                    <input type="text" name="FirstName" ng-model="bookingDetails.firstName" class="form-control"/>
+                </div>
+                <div class="col-xs-6">
+                    <label>Surname</label>
+                    <input type="text" name="Surname" ng-model="bookingDetails.surname" class="form-control"/>
+                </div>
+                <div class="col-xs-12">
+                    <label>Email Address</label>
+                    <input type="text" name="emailaddress" ng-model="bookingDetails.emailaddress" class="form-control"/>
+                </div>
+                <div class="col-xs-12">
+                    <label>Mobile Number</label>
+                    <input type="text" name="mobile" ng-model="bookingDetails.mobile" class="form-control"/>
+                </div>
+                <div class="col-xs-12">
+                    <label>Card Number</label>
+                    <input type="text" name="Cardnumber" ng-model="bookingDetails.cardNumber" class="form-control"/>
+                </div>
             </div>
-            <input type="text" placeholder="Security Code" />
+        </div>
 
-            <label>Billing Address</label>
-            <input type="text" placeholder="Address 1" />
-            <input type="text" placeholder="Address 2" />
-            <input type="text" placeholder="City" />
-            <input type="text" placeholder="Post Code" />
+        <div class="form-group">
+            <div class="row">
+                <div class="col-xs-12">
+                    <label>Type</label>
+                    <img src="http://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/Old_Visa_Logo.svg/2000px-Old_Visa_Logo.svg.png"
+                         width="100"/>
+                    <img src="http://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/MasterCard_Logo.svg/2000px-MasterCard_Logo.svg.png"
+                         width="100"/>
+                </div>
+            </div>
+        </div>
 
-        </main>
-    </section>
+        <div class="form-group">
+            <div class="row">
+                <div class="col-xs-12">
+                    <label>Expire Month / Year / CSC</label>
+                </div>
+                <div class="col-xs-4">
+                    <select ng-model="month" ng-options="month.name for month in DatePicker.months"
+                            class="form-control">
+                        <option value="">Month</option>
+                    </select>
+                </div>
+                <div class="col-xs-4">
+                    <select ng-model="year" ng-options="year.name for year in DatePicker.years"
+                            class="form-control">
+                        <option value="">Year</option>
+                    </select>
+                </div>
 
-    <section class="subnavmenu">
-        <nav ng-click="gotoConfirmation()">
-            <button class="btn btn-default col-xs-3 pull-right">Next</button>
-        </nav>
-    </section>
+                <div class="col-xs-4">
+                    <input type="text" name="CSCCode" placeholder="CSC" ng-model="bookingDetails.csc" class="form-control"/>
+                </div>
+            </div>
+        </div>
 
+        <div class="form-group">
+            <div class="row">
+                <h2 class="col-xs-12">Billing Address</h2>
+                <div class="col-xs-12">
+                    <label>House number</label>
+                    <input type="text" name="address.Number" ng-model="bookingDetails.houseNumber" class="form-control"/>
+                </div>
+                <div class="col-xs-12">
+                    <label>Postcode</label>
+                    <input type="text" name="address.postcode" ng-model="bookingDetails.postcode" class="form-control"/>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="row">
+                <div class="col-xs-12">
+                    <input type="submit" class="waxibutton pull-right"/>
+                </div>
+            </div>
+        </div>
+    </form>
 </div>

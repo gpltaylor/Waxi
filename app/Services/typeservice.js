@@ -25,24 +25,24 @@
 
             var from, to;
             from = (new Date()).getFullYear();
-            to = from - 70;
-            for (; from >= to; from--) {
+            to = from + 10;
+            for (; from < to; from++) {
                 DatePicker.years.push({ name: from, value: from });
             }
 
             DatePicker.months = [];
-            DatePicker.months.push({ name: 'January', value: 1 });
-            DatePicker.months.push({ name: 'february', value: 2 });
-            DatePicker.months.push({ name: 'March', value: 3 });
-            DatePicker.months.push({ name: 'April', value: 4 });
-            DatePicker.months.push({ name: 'May', value: 5 });
-            DatePicker.months.push({ name: 'june', value: 6 });
-            DatePicker.months.push({ name: 'July', value: 7 });
-            DatePicker.months.push({ name: 'August', value: 8 });
-            DatePicker.months.push({ name: 'September', value: 9 });
-            DatePicker.months.push({ name: 'October', value: 10 });
-            DatePicker.months.push({ name: 'November', value: 11 });
-            DatePicker.months.push({ name: 'December', value: 12 });
+            DatePicker.months.push({ name: '1 - Jan', value: 1 });
+            DatePicker.months.push({ name: '2 - feb', value: 2 });
+            DatePicker.months.push({ name: '3 - March', value: 3 });
+            DatePicker.months.push({ name: '4 - April', value: 4 });
+            DatePicker.months.push({ name: '5 - May', value: 5 });
+            DatePicker.months.push({ name: '6 - june', value: 6 });
+            DatePicker.months.push({ name: '7 - July', value: 7 });
+            DatePicker.months.push({ name: '8 - August', value: 8 });
+            DatePicker.months.push({ name: '9 - September', value: 9 });
+            DatePicker.months.push({ name: '10 - October', value: 10 });
+            DatePicker.months.push({ name: '11 - November', value: 11 });
+            DatePicker.months.push({ name: '12 - December', value: 12 });
 
         };
 
