@@ -43,7 +43,7 @@ module.exports = function(grunt) {
                 cache: 0,
                 root: './',
                 port: 8000,
-                host: '192.168.1.76',
+                host: 'localhost',
                 showDir: true,
                 runInBackground: true
             },

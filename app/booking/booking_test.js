@@ -73,6 +73,10 @@ describe('Booking', function () {
             expect(bookingDetails.numAdults).toBe(4);
         });
 
+        it('Payment booking years should contain last 10 years', function() {
+           expect(scope.DatePicker.previousyears.length).toBe(10);
+        });
+
         xit('should assign a travel type to departure item', function() {
            // TODO: Update to store the Travel Item that indicates when/where the user will depart form a port
         });

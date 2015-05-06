@@ -13,6 +13,7 @@
         var DatePicker = {};
         DatePicker.days = [];
         DatePicker.years = [];
+        DatePicker.previousyears = [];
 
         /*
          * Setup the values required for the Date Picker
@@ -28,6 +29,13 @@
             to = from + 10;
             for (; from < to; from++) {
                 DatePicker.years.push({ name: from, value: from });
+            }
+
+            // Setup payment years
+            to = (new Date()).getFullYear();
+            from = to - 10;
+            for (; from < to; from++) {
+                DatePicker.previousyears.push({ name: from, value: from });
             }
 
             DatePicker.months = [];
