@@ -1,4 +1,5 @@
 ﻿<div class="bookingview">
+    {{bookingDetails}}
     <form novalidate name="FrmBookingView" class="css-form">
 
         <div class="bookingTickets">
@@ -6,10 +7,8 @@
                 <div class="row">
                     <div class="col-xs-12">
                         <label>Travel Type</label>
-                        <select name="TicketType" ng-model="bookingDetails.ticketType" class="form-control" required>
-                            <option>Single</option>
-                            <option>Return</option>
-                        </select>
+                        <select class="form-control" ng-options="travelType.name for travelType in travelTypes"
+                                ng-model="bookingDetails.travelType" required=""/>
                     </div>
                 </div>
             </div>
@@ -38,15 +37,15 @@
                     <div class="col-xs-6">
                         <div class="form-group">
                             <label>Leaving from</label>
-                            <select class="form-control" ng-options="departure.name for departure in departures"
+                            <select class="form-control" ng-options="departure.name for departure in locations"
                                     ng-model="bookingDetails.departure" required=""/>
                         </div>
                     </div>
                     <div class="col-xs-6">
                         <div class="form-group">
                             <label>Going to</label>
-                            <select class="form-control" ng-options="arrival.name for arrival in arrivals"
-                                    ng-model="bookingDetails.arrival"/>
+                            <select class="form-control" ng-options="arrival.name for arrival in locations"
+                                    ng-model="bookingDetails.arrival" required=""/>
                         </div>
                     </div>
                 </div>
@@ -57,12 +56,12 @@
                 <div class="row">
                     <div class="col-xs-6">
                         <label>Departure Date</label>
-                        <input type="date" name="DepartureDate" ng-model="bookingDetails.departureDate"
+                        <input type="date" name="DepartureDate"
                                class="form-control"/>
                     </div>
                     <div class="col-xs-6">
                         <label>Departure Time</label>
-                        <input type="time" name="DepartureTime" ng-model="bookingDetails.departureDate"
+                        <input type="time" name="DepartureTime"
                                class="form-control"/>
                     </div>
                 </div>
@@ -72,11 +71,11 @@
                 <div class="row">
                     <div class="col-xs-6">
                         <label>Return Date</label>
-                        <input type="date" name="ReturnDate" ng-model="bookingDetails.returnDate" class="form-control"/>
+                        <input type="date" name="ReturnDate" class="form-control"/>
                     </div>
                     <div class="col-xs-6">
                         <label>Return Time</label>
-                        <input type="time" name="ReturnTime" ng-model="bookingDetails.returnDate" class="form-control"/>
+                        <input type="time" name="ReturnTime" class="form-control"/>
                     </div>
                 </div>
             </div>

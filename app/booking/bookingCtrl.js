@@ -10,31 +10,19 @@ app.controller('BookingCtrl', ['$scope', '$location', '$filter', 'TypesService',
     function ($scope, $location, $filter, TypesService, AccountService, BookingService) {
 
         $scope.name = "Booking Controller";
-        $scope.departures = BookingService.departures;
-        $scope.arrivals = BookingService.arrivals;
+        $scope.locations = BookingService.locations;
+        $scope.travelTypes = BookingService.travelTypes;
         $scope.DatePicker = TypesService.getDatePickerOptions();
 
-        if (BookingService.bookingDetails != undefined) {
-            $scope.bookingDetails = BookingService.bookingDetails;
-        } else {
-            $scope.bookingDetails = {
-                ticketType: 'Single',
-                numAdults: 1,
-                numChildren: 0,
-                departure: '',
-                arrival: '',
-                departureDate: new Date(),
-                returnDate: new Date()
-            };
-        }
+        $scope.bookingDetails = BookingService.restoreBooking();
 
         $scope.gotoPayment = function (bookingDetails) {
-            BookingService.bookingDetails = bookingDetails;
+            BookingService.saveBooking(bookingDetails);
             $location.url("/booking/payment");
         };
 
         $scope.gotoConfirmation = function (bookingDetails) {
-            BookingService.bookingDetails = bookingDetails;
+            BookingService.saveBooking(bookingDetails);
             $location.url("/booking/success");
         };
 
