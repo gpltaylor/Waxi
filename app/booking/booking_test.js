@@ -77,6 +77,21 @@ describe('Booking', function () {
            expect(scope.DatePicker.previousyears.length).toBe(10);
         });
 
+        it('departure and arrival have values', function() {
+            expect(scope.departures.length).toBe(3);
+            expect(scope.arrivals.length).toBe(3);
+        });
+
+        it('check that watch for destination is working', function() {
+            scope.bookingDetails.departure = scope.locations[2];
+            ctrl.updateTimeTable(new Date());
+            expect(scope.watchedHit).toBeTruthy();
+            expect(scope.bookingDetails.departure.id).toBe(3);
+
+            expect(scope.arrivals.length).toBe(2);
+
+        });
+
         xit('should assign a travel type to departure item', function() {
            // TODO: Update to store the Travel Item that indicates when/where the user will depart form a port
         });

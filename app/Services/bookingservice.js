@@ -13,9 +13,19 @@
         var localStorageKey = 'bookingDetails';
 
         var locations = [
-            {id: 1, name: "Dukes 92"},
-            {id: 2, name: "Hotel Football"},
-            {id: 3, name: 'Trafford Centre'}
+            // TODO: Add Weekday and duplicate all items allowing for different time table per day
+            {id: 1, name: "Dukes 92", times: [
+                {hour: 9, minutes:0, direction: 0},
+                {hour: 18, minutes:0, direction: 1}
+            ]},
+            {id: 2, name: "Hotel Football", times:[
+                {hour: 11, minutes:0, direction: 0},
+                {hour: 16, minutes:0, direction: 1}
+            ]},
+            {id: 3, name: 'Trafford Centre', times: [
+                {hour: 13, minutes:0, direction: 0},
+                {hour: 14, minutes:0, direction: 1}
+            ]}
         ];
 
         function saveBooking(_bookingDetails_) {

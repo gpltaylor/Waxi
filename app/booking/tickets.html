@@ -37,14 +37,14 @@
                     <div class="col-xs-6">
                         <div class="form-group">
                             <label>Leaving from</label>
-                            <select class="form-control" ng-options="departure.name for departure in locations"
+                            <select class="form-control" ng-options="departure.name for departure in departures"
                                     ng-model="bookingDetails.departure" required=""/>
                         </div>
                     </div>
                     <div class="col-xs-6">
                         <div class="form-group">
                             <label>Going to</label>
-                            <select class="form-control" ng-options="arrival.name for arrival in locations"
+                            <select class="form-control" ng-options="arrival.name for arrival in arrivals"
                                     ng-model="bookingDetails.arrival" required=""/>
                         </div>
                     </div>
