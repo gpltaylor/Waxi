@@ -73,6 +73,36 @@ describe('Booking', function () {
             expect(bookingDetails.numAdults).toBe(4);
         });
 
+        it('should restore Departure Date from local storage', function() {
+            var newdate = new Date('2015-05-15T23:00:00.000Z');
+            scope.bookingDetails.departure = scope.locations[2];
+            scope.bookingDetails.departureDate = newdate;
+            expect(scope.bookingDetails.departure.id).toBe(3);
+
+            BookingService.saveBooking(scope.bookingDetails);
+            BookingService.clearLocalBookingDetails();
+            var bookingDetails = BookingService.restoreBooking();
+
+            expect(bookingDetails).toBeDefined();
+            expect(bookingDetails.departureDate.getTime()).toBe(newdate.getTime());
+        });
+
+        it('should restore Departure Time from local storage', function() {
+            var newdate = new Date('2015-05-15T23:00:00.000Z');
+            scope.bookingDetails.departure = scope.locations[2];
+            scope.bookingDetails.departureDate = newdate;
+            scope.bookingDetails.departureTime = scope.bookingDetails.departure.times[1];
+
+            expect(scope.bookingDetails.departure.id).toBe(3);
+
+            BookingService.saveBooking(scope.bookingDetails);
+            BookingService.clearLocalBookingDetails();
+            var bookingDetails = BookingService.restoreBooking();
+
+            expect(bookingDetails).toBeDefined();
+            expect(bookingDetails.departureTime).toBe(BookingService.locations[2].times[1]);
+        });
+
         it('Payment booking years should contain last 10 years', function() {
            expect(scope.DatePicker.previousyears.length).toBe(10);
         });
@@ -98,14 +128,9 @@ describe('Booking', function () {
             expect(scope.isReturn()).toBeFalsy();
         });
 
-        it('show return details if ticket is not return type', function() {
-            scope.bookingDetails.travelType = scope.travelTypes[1];
-            expect(scope.bookingDetails.travelType.name).toBe("Return");
-            expect(scope.isReturn()).toBeTruthy();
-        });
-
-        xit('should assign a travel type to departure item', function() {
-           // TODO: Update to store the Travel Item that indicates when/where the user will depart form a port
+        it('show correct times for given departure destination', function() {
+            scope.bookingDetails.departure = scope.locations[2];
+            expect(scope.bookingDetails.departure.times.length).toBe(2);
         });
 
     });

@@ -15,16 +15,16 @@
         var locations = [
             // TODO: Add Weekday and duplicate all items allowing for different time table per day
             {id: 1, name: "Dukes 92", times: [
-                {hour: 9, minutes:0, direction: 0},
-                {hour: 18, minutes:0, direction: 1}
+                {id:1, hour: 9, minutes:0, direction: 0, display: '9:00'},
+                {id:2, hour: 18, minutes:0, direction: 1, display: '18:00'}
             ]},
             {id: 2, name: "Hotel Football", times:[
-                {hour: 11, minutes:0, direction: 0},
-                {hour: 16, minutes:0, direction: 1}
+                {id:3, hour: 11, minutes:0, direction: 0, display: '11:00'},
+                {id:4, hour: 16, minutes:0, direction: 1, display: '16:00'}
             ]},
             {id: 3, name: 'Trafford Centre', times: [
-                {hour: 13, minutes:0, direction: 0},
-                {hour: 14, minutes:0, direction: 1}
+                {id:5, hour: 13, minutes:0, direction: 0, display: '13:00'},
+                {id:6, hour: 14, minutes:0, direction: 1, display: '14:00'}
             ]}
         ];
 
@@ -50,6 +50,27 @@
                     storageData.travelType = travelTypes[storageData.travelType.id-1];
                     storageData.departure = locations[storageData.departure.id-1];
                     storageData.arrival = locations[storageData.arrival.id-1];
+                    storageData.departureDate = new Date(storageData.departureDate);
+                    storageData.arrivalDate = new Date(storageData.arrivalDate);
+
+                    // find the Departure/Arrival time within the item and assign to the storage item
+                    // to allow Angular to see the change in the Digest
+                    // NOTE: Filter will return an array, we only want the first item and no other item should match
+                    // Warning: This is not good as I think this is always log(n) even if it finds the items in the first iteration
+                    var departureTime = storageData.departure.times.filter(function(time) {
+                        if(storageData == undefined || storageData.departureTime == undefined) {
+                            return false;
+                        }
+
+                        return time.id == storageData.departureTime.id;
+                    });
+                    // Get the first (only hopefully) item
+                    if(departureTime != undefined && departureTime.length == 1) {
+                        storageData.departureTime = departureTime[0];
+                    }
+
+                    // Same again for arrival time
+
                     return storageData;
                 }
             }

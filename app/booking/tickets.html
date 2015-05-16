@@ -27,7 +27,10 @@
                     <div class="col-xs-6">
                         <label>Child</label>
                         <input type="text" name="NumChildren" ng-model="bookingDetails.numChildren"
-                               class="form-control"/>
+                               pattern="^[0-9][0-9]*$" class="form-control" required=""/>
+                        <div ng-show="FrmBookingView.NumChildren.$touched">
+                            <span ng-show="FrmBookingView.NumChildren.$error.pattern">invalid number of tickets</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -56,13 +59,12 @@
                 <div class="row">
                     <div class="col-xs-6">
                         <label>Departure Date</label>
-                        <input type="date" name="DepartureDate"
-                               class="form-control"/>
+                        <input type="date" name="DepartureDate" class="form-control" ng-model="bookingDetails.departureDate" required=""/>
                     </div>
                     <div class="col-xs-6">
                         <label>Departure Time</label>
-                        <input type="time" name="DepartureTime"
-                               class="form-control"/>
+                        <select class="form-control" ng-options="time.display for time in bookingDetails.departure.times"
+                                ng-model="bookingDetails.departureTime" required=""/>
                     </div>
                 </div>
             </div>
@@ -71,11 +73,12 @@
                 <div class="row">
                     <div class="col-xs-6">
                         <label>Return Date</label>
-                        <input type="date" name="ReturnDate" class="form-control"/>
+                        <input type="date" name="ReturnDate" class="form-control" ng-model="bookingDetails.arrivalDate" required=""/>
                     </div>
                     <div class="col-xs-6">
                         <label>Return Time</label>
-                        <input type="time" name="ReturnTime" class="form-control"/>
+                        <select class="form-control" ng-options="time.display for time in bookingDetails.arrival.times"
+                                ng-model="bookingDetails.arrivalTime" required=""/>
                     </div>
                 </div>
             </div>

@@ -16,7 +16,6 @@ app.controller('BookingCtrl', ['$scope', '$location', '$filter', 'TypesService',
 
         $scope.departures = BookingService.locations;
         $scope.arrivals = BookingService.locations;
-
         $scope.bookingDetails = BookingService.restoreBooking();
 
         $scope.$watch(function(scope) { return $scope.bookingDetails.departure },
