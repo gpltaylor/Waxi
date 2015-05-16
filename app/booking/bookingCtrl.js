@@ -36,6 +36,10 @@ app.controller('BookingCtrl', ['$scope', '$location', '$filter', 'TypesService',
             $location.url("/booking/success");
         };
 
+        $scope.isReturn = function() {
+            return $scope.bookingDetails.travelType.id == 2;
+        };
+
         /*
             Look at the selected departure value and update the dropdown list available to it.
             This needs to loop the current time (passed in for testing reasons) and filter the arrival list

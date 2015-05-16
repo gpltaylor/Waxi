@@ -92,6 +92,18 @@ describe('Booking', function () {
 
         });
 
+        it('hide return details if ticket is not return type', function() {
+            scope.bookingDetails.travelType = scope.travelTypes[0];
+            expect(scope.bookingDetails.travelType.name).toBe("Single");
+            expect(scope.isReturn()).toBeFalsy();
+        });
+
+        it('show return details if ticket is not return type', function() {
+            scope.bookingDetails.travelType = scope.travelTypes[1];
+            expect(scope.bookingDetails.travelType.name).toBe("Return");
+            expect(scope.isReturn()).toBeTruthy();
+        });
+
         xit('should assign a travel type to departure item', function() {
            // TODO: Update to store the Travel Item that indicates when/where the user will depart form a port
         });
