@@ -73,12 +73,14 @@
                 <div class="row">
                     <div class="col-xs-6">
                         <label>Return Date</label>
-                        <input type="date" name="ReturnDate" class="form-control" ng-model="bookingDetails.arrivalDate" required=""/>
+                        <input type="date" name="ReturnDate" class="form-control"
+                               ng-model="bookingDetails.arrivalDate"
+                               ng-required="isReturn()"/>
                     </div>
                     <div class="col-xs-6">
                         <label>Return Time</label>
                         <select class="form-control" ng-options="time.display for time in bookingDetails.arrival.times"
-                                ng-model="bookingDetails.arrivalTime" required=""/>
+                                ng-model="bookingDetails.arrivalTime" ng-required="isReturn()"/>
                     </div>
                 </div>
             </div>
